@@ -1,111 +1,190 @@
-/*General styles*/
+/* General Styles for Dark Theme */
 body {
   margin: 0;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
   line-height: 1.6;
+  color: #f1f1f1; /* Light text */
+  background-color: #121212; /* Dark background */
 }
 
-/*Header styles*/
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px 0;
+/* Navigation */
+nav {
   text-align: center;
+  margin-top: 10px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #1db954; /* Modern green accent */
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #1ed760; /* Slightly brighter green */
+}
+
+/* Header */
+header {
+  background-color: #1c1c1c; /* Slightly lighter dark tone */
+  color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 header p {
   margin: 10px 0 0;
   font-size: 1.2rem;
+  color: #ccc; /* Softer text for the subtitle */
 }
 
-/*Section styles*/
+/* Section Styles */
 section {
-  padding: 20px;
+  padding: 30px;
   max-width: 800px;
   margin: 0 auto;
+  background-color: #1e1e1e; /* Dark card-style background */
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  margin-bottom: 20px;
+
+  opacity: 0; /* Hidden by default */
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Delay each section */
+#about {
+  animation-delay: 0.2s;
+}
+
+#skills {
+  animation-delay: 0.4s;
+}
+
+#projects {
+  animation-delay: 0.6s;
+}
+
+#contact {
+  animation-delay: 0.8s;
 }
 
 h2 {
-  color: #cbec0c;
-  margin-bottom: 10px;
+  color: #1db954;
+  margin-bottom: 15px;
 }
 
+/* Links */
 a {
-  color: rgb(66, 189, 247);
+  color: #1db954;
   text-decoration: none;
-  font-size: 1rem;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #1ed760;
 }
 
-/*Skills section*/
-#skills {
-  padding: 20px;
-  background-color: #f4f4f4;
-  border-top: 2px solid #ddd;
-}
-
+/* Skills Section */
 #skills ul {
-  list-style-type: square;
-  margin: 10 px 0 0;
+  list-style: none; /* Remove default list styles */
   padding: 0;
 }
 
 #skills li {
-  margin: 5px 0;
-  font-size: 1.1rem;
-  color: #555;
-  list-style: none;
-}
-/*Projects Section */
-#projects {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-top: 2px solid #ddd;
-  margin-top: 20px;
+  margin: 8px 0;
+  padding: 10px;
+  background: #2c2c2c; /* Subtle background for each skill */
+  color: #f1f1f1;
+  border-radius: 5px;
 }
 
+/* Projects Section */
 .project {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
   margin: 10px 0;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #282828; /* Darker background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Soft shadow */
 }
 
 .project h3 {
   margin-top: 0;
-  color: #333;
+  color: #1db954;
 }
 
 .project a {
   display: inline-block;
   margin-right: 10px;
-  color: #007bff;
+  background-color: #1db954;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .project a:hover {
-  text-decoration: underline;
+  background-color: #1ed760;
 }
 
-/*Media Queries*/
+/* Back to Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background-color: #1db954;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 1.5rem;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #1ed760;
+}
+
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start with a slight downward movement */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Return to the original position */
+  }
+}
+
+
+
+/* Media Queries */
 @media (max-width: 768px) {
   body {
     font-size: 14px;
   }
+
   header h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
+
   #projects .project {
     padding: 10px;
   }
